@@ -8,6 +8,7 @@ public class MonsterController
 {
 	private MarshmallowMonster Homunculus;
 	private MarshmallowOutput myOutput;
+	private MarshmallowMonster userMonster;
 	private Scanner monsterScanner;
 	
 	public MonsterController()
@@ -28,17 +29,29 @@ public class MonsterController
 	public void start()
 	{
 		myOutput.displayMonsterInfo(Homunculus.toString());
-		askQuestions();
-		myOutput.displayMonsterInfo("New Monster Info " + Homunculus.toString());
-		System.out.println("Type in a different number of eyes for the monster");
-		int newMonsterEyes = monsterScanner.nextInt();
-		Homunculus.setMonsterEyes(newMonsterEyes);
+		myOutput.displayMonsterGUI(Homunculus.toString());
 	}
 	
 	private void askQuestions()
 	{
 		System.out.println("Type in a name for the homunculus ");
 		String newMonsterName = monsterScanner.next();
+		System.out.println("Give me Eyes");
+		int newMonsterEyes = monsterScanner.nextInt();
+		System.out.println("I needs noses");
+		int newMonsterNoses = monsterScanner.nextInt();
+		System.out.println("Give me hair");
+		double newMonsterHair = monsterScanner.nextDouble();
+		System.out.println("Give me dem legs");
+		double newMonsterLegs = monsterScanner.nextDouble();
+		System.out.println("I need my bellybutton");
+		boolean newMonsterBellyButton = monsterScanner.nextBoolean();
 		Homunculus.setMonsterName(newMonsterName);
+		Homunculus.setMonsterEyes(newMonsterEyes);
+		Homunculus.setMonsterNoses(newMonsterNoses);
+		Homunculus.setMonsterHair(newMonsterHair);
+		Homunculus.setMonsterLegs(newMonsterLegs);
+		Homunculus.setMonsterBellyButton(newMosnterBellyButton);
+		
 	}
 }
