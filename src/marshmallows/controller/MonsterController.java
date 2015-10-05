@@ -10,7 +10,12 @@ public class MonsterController
 	private MarshmallowOutput myOutput;
 	private MarshmallowMonster userMonster;
 	private Scanner monsterScanner;
+	private PopupDisplay myPopups;
 	
+	public PopupController()
+	{
+		myPopups = new PopupDisplay()
+	}
 	public MonsterController()
 	{
 		int eyes = 3;
@@ -34,17 +39,17 @@ public class MonsterController
 	
 	private void askQuestions()
 	{
-		System.out.println("Type in a name for the homunculus ");
-		String newMonsterName = monsterScanner.next();
-		System.out.println("Give me Eyes");
+		myPopups.showResponse("Type in a name for the homunculus ");
+		String newMonsterName = myPopups.grabanswer();
+		myPopups.showResponse("Give me Eyes");
 		int newMonsterEyes = monsterScanner.nextInt();
-		System.out.println("I needs noses");
+		myPopups.showResponse("I needs noses");
 		int newMonsterNoses = monsterScanner.nextInt();
-		System.out.println("Give me hair");
+		myPopups.showResponse("Give me hair");
 		double newMonsterHair = monsterScanner.nextDouble();
-		System.out.println("Give me dem legs");
+		myPopups.showResponse("Give me dem legs");
 		double newMonsterLegs = monsterScanner.nextDouble();
-		System.out.println("I need my bellybutton");
+		myPopups.showResponse("I need my bellybutton");
 		boolean newMonsterBellyButton = monsterScanner.nextBoolean();
 		Homunculus.setMonsterName(newMonsterName);
 		Homunculus.setMonsterEyes(newMonsterEyes);
